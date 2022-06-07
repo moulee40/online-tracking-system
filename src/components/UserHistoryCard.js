@@ -9,11 +9,22 @@ class UserHistoryCard extends React.Component {
     };
   }
 
+  handleCardClick = (e) =>{
+    e.preventDefault();
+      const {
+        history: { push } , projectData
+      } = this.props;
+      push({
+        pathname: `/project/${projectData.projectId}`,
+        projectData: projectData
+      });
+  }
+
   render() {
     const {projectData} = this.props;
     return (
 
-          <div style={{minWidth:'320px'}} class="flex flex-col p-6 max-h-72  max-w-xs bg-white rounded-lg border border-gray-200 shadow-md mr-4 mb-4 cursor-pointer transition ease-in-out hover:bg-gray-100 duration-300"  >
+          <div style={{minWidth:'320px'}} class="flex flex-col p-6 max-h-72  max-w-xs bg-white rounded-lg border border-gray-200 shadow-md mr-4 mb-4 cursor-pointer transition ease-in-out hover:bg-gray-100 duration-300"  onClick={this.handleCardClick}>
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" >{projectData.projectName}</h5>
           <p id='card_desc' class="flex-1 mb-3 font-normal text-gray-700 dark:text-gray-400" >{projectData.description}</p>
           <div className="flex justify-between">
