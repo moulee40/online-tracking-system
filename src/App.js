@@ -7,6 +7,7 @@ import Signup from "./components/Signup";
 import AdminMain from "./components/AdminMain";
 import Project from "./components/Project";
 import UserHistory from "./components/UserHistory";
+import AddNewProject from "./components/AddNewProject";
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
         <Route path="/signup" component={Signup}></Route>
         <Route path="/home" component={Main}></Route>
         <Route path="/admin" component={AdminMain}></Route>
-        <Route path="/project" component={Project}></Route>
+        <Route path="/project/:id" component={Project}></Route>
         <Route path="/userHistory/:id" component={UserHistory}></Route>
+        <Route path="/addNew/:id" component={AddNewProject}></Route>
         {/* <Route exact path="/order/:id/:name/:isAdmin" component={Orders}></Route>
         <Route exact path="/payment/:id/:isAdmin" component={Payment}></Route> */}
       </div>

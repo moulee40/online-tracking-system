@@ -22,7 +22,7 @@ class FormDialog extends React.Component {
     }
 
     render() {
-        const {open,handleClose,handleDone} = this.props;
+        const {open,handleClose,handleDone,isCancel} = this.props;
         return (
             <div>
         <Dialog
@@ -36,8 +36,7 @@ class FormDialog extends React.Component {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-          Once Done it cannot be changed.  
-          Are you sure you want to update this product?
+          {isCancel ? 'Once deleted it cannot be changed. Are you sure you want to delete this project?': 'Once done it cannot be changed. Are you sure you want to update this project?'}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

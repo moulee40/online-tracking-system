@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 html{
-    background: #cce5f9;
+    background: #c5ebe7;
 }
 
 
@@ -21,4 +21,9 @@ html{
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+}
+
+#button_color{
+    background: rgb(23 43 93);
+    color: rgb(0, 210, 144);
 }

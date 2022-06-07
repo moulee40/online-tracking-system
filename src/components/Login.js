@@ -51,10 +51,12 @@ class Login extends React.Component {
     axios.post(eventBaseUrl,reqJson).then((res) => {
      if(res.data.isValidUser)
      {
+       localStorage.setItem("userId",parseInt(res.data.userId));
+       localStorage.setItem("userRole",res.data.userRole);
       push({
         pathname: "/home",
-        userId: res.data.userId,
-        userRole:res.data.userRole
+        // userId: res.data.userId,
+        // userRole:res.data.userRole
       });
      }
      if(!res.data.isValidUser){
